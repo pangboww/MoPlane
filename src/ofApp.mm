@@ -4,7 +4,7 @@
 void ofApp::setup(){
     ofBackground(0);
     loadAllImage();
-
+    myPlane = new Plane(new ofVec2f(ofGetWidth()/2,ofGetHeight()/1.3));
 }
 
 //--------------------------------------------------------------
@@ -14,22 +14,26 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    background.draw(0, 0);
+    background.draw(0,0);
+    myPlane->show();
 }
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-
 }
 
 //--------------------------------------------------------------
 void ofApp::touchDown(ofTouchEventArgs & touch){
-
+    ptouchX = touch.x;
+    ptouchY = touch.y;
 }
 
 //--------------------------------------------------------------
 void ofApp::touchMoved(ofTouchEventArgs & touch){
-
+    myPlane->move(touch.x-ptouchX, touch.y-ptouchY);
+    ptouchX = touch.x;
+    ptouchY = touch.y;
+    cout<<"\nmoved:" <<"\nx: " <<touch.xspeed << "\ny: "<<touch.yspeed;
 }
 
 //--------------------------------------------------------------
@@ -69,12 +73,7 @@ void ofApp::deviceOrientationChanged(int newOrientation){
 
 void ofApp::loadAllImage(){
     background.loadImage("images/airPlanesBackground.png");
-    planeL.loadImage("images/PLANE8L.png");
-    planeN.loadImage("images/PLANE8N.png");
-    planeR.loadImage("images/PLANE8R.png");
-    propeller1.loadImage("images/PlanePropeller1.png");
-    propeller2.loadImage("images/PlanePropeller2.png");
-    shadow.loadImage("images/PLANE8SHADOW.png");
+    background.resize(320, 568);
     bullet.loadImage("images/bullet.png");
     missile.loadImage("images/missile.png");
     enemy.loadImage("images/aerolite01.png");

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxiOS.h"
 #include "ofxiOSExtras.h"
+#include "Plane.h"
 
 
 class ofApp : public ofxiOSApp {
@@ -24,13 +25,18 @@ public:
     void gotMemoryWarning();
     void deviceOrientationChanged(int newOrientation);
     
+    
 private:
+    Plane *myPlane;
+    
     ofImage background;
     ofImage planeN, planeL, planeR;
     ofImage propeller1, propeller2;
     ofImage shadow;
     ofImage bullet, missile, enemy;
     list<ofImage> explosion;
+    
+    float ptouchX, ptouchY;
     
     void loadAllImage();
     

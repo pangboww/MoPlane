@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8AC27A10-92D9-4200-A66D-8E141941C2A7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MoPlane</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>934469EC4C8DEECE7EA69AB9CFD8068C031C109D</key>
+		<string>https://github.com/pangboww/MoPlane.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MoPlane.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>934469EC4C8DEECE7EA69AB9CFD8068C031C109D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pangboww/MoPlane.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>934469EC4C8DEECE7EA69AB9CFD8068C031C109D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>934469EC4C8DEECE7EA69AB9CFD8068C031C109D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MoPlane</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -3,9 +3,15 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    startTime = 0;
+    duration = 0;
     ofBackground(0);
     loadAllImage();
     myPlane = new Plane(new ofVec2f(ofGetWidth()/2,ofGetHeight()/1.3));
+    
+    initialBufferSize = 512;
+    sampleRate = 44100;
+    ofSoundStreamSetup(0, 1, this, sampleRate, initialBufferSize, 1);
 }
 
 //--------------------------------------------------------------
@@ -89,6 +95,41 @@ void ofApp::loadAllImage(){
 }
 
 void ofApp::audioIn(float * input, int bufferSize, int nChannels){
-    cout << input[1];
+    float x = 0;
+    for(int i=0; i<bufferSize; i++) {
+        x += input[i];
+    }
+    x = x / bufferSize;
+    
+    
+    if(x>0.001){
+        ofLog(OF_LOG_NOTICE)<<"yes!";
+        if(startTime == 0){
+            duration = 0;
+            startTime = ofGetElapsedTimeMillis();
+        }
+        else{
+            duration = 0;
+        }
+    }
+    else{
+        if(startTime != 0){
+            duration = ofGetElapsedTimeMillis() - startTime;
+            startTime = 0;
+        }
+        else{
+            duration = 0;
+        }
+    }
+    
+    if(duration>=10 && duration < 700){
+        ofLog(OF_LOG_NOTICE)<<"fire!";
+    }
+    else if(duration > 700){
+        ofLog(OF_LOG_NOTICE)<<"Yo!missle!";
+    }
+    
+    
+    
 }
 

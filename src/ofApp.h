@@ -9,6 +9,9 @@
 class ofApp : public ofxiOSApp {
 	
 public:
+    int	initialBufferSize;
+    int	sampleRate;
+    
     void setup();
     void update();
     void draw();
@@ -28,6 +31,9 @@ public:
     
     
 private:
+    int startTime;
+    int duration;
+    
     Plane *myPlane;
     
     ofImage background;

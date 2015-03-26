@@ -1,3 +1,4 @@
+#import <AVFoundation/AVFoundation.h>
 #include "ofApp.h"
 
 //--------------------------------------------------------------
@@ -33,7 +34,6 @@ void ofApp::touchMoved(ofTouchEventArgs & touch){
     myPlane->move(touch.x-ptouchX, touch.y-ptouchY);
     ptouchX = touch.x;
     ptouchY = touch.y;
-    cout<<"\nmoved:" <<"\nx: " <<touch.xspeed << "\ny: "<<touch.yspeed;
 }
 
 //--------------------------------------------------------------
@@ -86,5 +86,9 @@ void ofApp::loadAllImage(){
         image.loadImage(filename);
         explosion.insert(explosion.end(), image);
     }
+}
+
+void ofApp::audioIn(float * input, int bufferSize, int nChannels){
+    cout << input[1];
 }
 

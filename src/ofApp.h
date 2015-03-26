@@ -24,6 +24,7 @@ public:
     void gotFocus();
     void gotMemoryWarning();
     void deviceOrientationChanged(int newOrientation);
+    void audioIn(float * input, int bufferSize, int nChannels);
     
     
 private:
